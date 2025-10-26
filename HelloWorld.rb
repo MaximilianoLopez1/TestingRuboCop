@@ -1,11 +1,20 @@
-print("Hello WOrld")
-sum = 17
-arrsum = 0
-arr = [9,8,7,6,5,4,3,2,1,0]
+# frozen_string_literal: true
 
-arr.each do |elements|
-    arrsum += elements
+# This is intentionally “bad” code for testing
+class BadExample
+  def bad_method(a,b,c,d)
+    sum = 0
+    arr = [1,2,3,4,5]
+    arr.each do |x|
+      sum += x
+    end
+
+    unused_var = 42
+
+    puts("The sum is #{sum}")  # RuboCop will flag parentheses and string style
+  end
 end
 
-print("arrsum")
-    
+# Top-level code (Reek usually ignores, but RuboCop still sees style issues)
+be = BadExample.new
+be.bad_method(1,2,3,4)
