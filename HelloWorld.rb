@@ -18,3 +18,8 @@ end
 # Top-level code (Reek usually ignores, but RuboCop still sees style issues)
 be = BadExample.new
 be.bad_method(1,2,3,4)
+print(
+
+
+"HEllo"
+)
